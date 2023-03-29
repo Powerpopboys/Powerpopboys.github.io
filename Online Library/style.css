@@ -1,0 +1,172 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+ 
+}
+body {
+    overflow: hidden;
+}
+
+.logo {
+    position: absolute;
+    inset: 20px 40px;
+    width: 200px;
+    height: 80px;
+}
+
+.logo h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic;
+}
+nav {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+nav ul {
+    display: flex;
+    margin: 0 10px 0 0;
+    
+}
+
+nav ul li {
+    text-align: center;
+    list-style: none;
+    margin: 10px 0 0 0;
+    line-height: 50px;
+    height: 50px;
+    
+    
+}
+
+nav ul li a {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    padding: 13px;
+    transition: .4s;
+    border-radius: 5px;
+}
+
+li:hover a{
+    
+    background-color: black;
+    color:  white;
+}
+/* 
+nav ul li a:after {
+    content: "";
+    background-color: black;
+    left: 0;
+    bottom: -2px;
+    position: absolute;
+    height: 3px;
+    width: 0;
+    transition: .3s;
+}
+
+a:hover:after {
+    width: 100%;
+
+} */
+nav input {
+    cursor: pointer;
+}
+
+nav input[type="text"] {
+    
+    height: 30px;
+    margin: 18px 0;
+    border-radius: 20px;
+    padding-left: 20px;
+    font-size: 13px;
+}
+nav input[type="submit"] {
+    height: 30px;
+    width: 70px;
+    border-radius: 15px;
+    margin: 18px 30px 0 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    
+}
+
+.lorem {
+    
+    width: 500px;
+    height: 150px;
+    position: absolute;
+    inset: 170px 0 0 30px;
+}
+
+.lorem h1 {
+    font-size: 50px;
+}
+
+.books {
+    position: absolute;
+    width: 600px;
+    height: 89.3vh;
+    top: 100px;
+    right: 0;
+}
+
+.books .book1, .book2, .book3 {
+    
+    width: 200px;
+    height: 250px;
+    padding: 12px 10px 10px;
+    text-align: center;
+
+}
+.books .book1{
+    transform: rotatez(20deg);
+    background-color: rgb(39, 36, 36);
+    
+}
+
+.books .book2 {
+    padding-top: 25px;
+    margin: -80px 150px;
+    background-color: grey;
+    
+}
+
+.books .book3 {
+    position: absolute;
+    margin: -100px 0 0 -40px;  
+    background-color: rgb(20, 87, 131);
+    z-index: 0;
+    transform: rotateZ(350deg);
+}
+.book1 img, .book2 img, .book3 img {
+    width: 150px;
+    border-radius: 5px;
+}
+
+
+
+
+.discover-more {
+    
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    position: relative;
+    inset: 350px 0 0 150px;
+    
+}
+
+.discover-more button {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
