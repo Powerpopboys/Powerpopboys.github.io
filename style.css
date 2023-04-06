@@ -1,23 +1,50 @@
+
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
  
 }
+
 body {
-    overflow: hidden;
+    overflow-x: hidden;
 }
+
+/* 
+/////////////////////
+    Style for 
+    Index.php
+////////////////////
+*/
 
 .logo {
-    position: absolute;
-    inset: 20px 40px;
-    width: 200px;
-    height: 80px;
+   display: inline-block;
+   position: absolute;
 }
 
-.logo h1 {
+.text-logo {
+    color: #403322;
+    width: 210px;
+    height: 35px;
+    margin: 20px 0 0 20px;
     font-family: 'Libre Baskerville', serif;
     font-style: italic;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #7a6241;
+    animation: 
+        typing 2s,
+        cursor .4s step-end infinite alternate
+    ;
+}
+
+@keyframes cursor {
+    50% { border-color: transparent;}
+}
+@keyframes typing {
+    from { width: 0;}
+    
 }
 nav {
     width: 100%;
@@ -26,6 +53,7 @@ nav {
     justify-content: flex-end;
     
 }
+
 nav ul {
     display: flex;
     margin: 0 10px 0 0;
@@ -38,8 +66,6 @@ nav ul li {
     margin: 10px 0 0 0;
     line-height: 50px;
     height: 50px;
-    
-    
 }
 
 nav ul li a {
@@ -52,10 +78,10 @@ nav ul li a {
 }
 
 li:hover a{
-    
-    background-color: black;
+    background-color: #AA8958;
     color:  white;
 }
+
 /* 
 nav ul li a:after {
     content: "";
@@ -72,31 +98,36 @@ a:hover:after {
     width: 100%;
 
 } */
+
 nav input {
     cursor: pointer;
 }
 
 nav input[type="text"] {
-    
     height: 30px;
     margin: 18px 0;
     border-radius: 20px;
     padding-left: 20px;
     font-size: 13px;
+    border: 2px solid #7a6241;
 }
+
 nav input[type="submit"] {
     height: 30px;
-    width: 70px;
+    width: 90px;
     border-radius: 15px;
     margin: 18px 30px 0 10px;
     border: none;
-    background-color: black;
-    color: white;
-    
+    background-color: #AA8958;
+    color: white;    
+    transition: .4s;
+}
+
+nav input[type="submit"]:hover {
+    background-color: #daaf6e;
 }
 
 .lorem {
-    
     width: 500px;
     height: 150px;
     position: absolute;
@@ -116,57 +147,297 @@ nav input[type="submit"] {
 }
 
 .books .book1, .book2, .book3 {
-    
     width: 200px;
     height: 250px;
     padding: 12px 10px 10px;
     text-align: center;
 
 }
+
 .books .book1{
+    position: absolute;
     transform: rotatez(20deg);
     background-color: rgb(39, 36, 36);
-    
+    top: 1vh;
+    z-index: 3;
+    animation: book1-effect 1s;
 }
 
 .books .book2 {
+    position: absolute;
     padding-top: 25px;
-    margin: -80px 150px;
+    top: 20vh;
+    left: 12vw;
     background-color: grey;
-    
+    z-index: 2;
+    animation: book2-effect 1.5s;
 }
 
 .books .book3 {
     position: absolute;
-    margin: -100px 0 0 -40px;  
+    top: 45vh;
+    left: 1vw; 
     background-color: rgb(20, 87, 131);
-    z-index: 0;
+    z-index: 1;
     transform: rotateZ(350deg);
+    animation: book3-effect 1s;
 }
+
 .book1 img, .book2 img, .book3 img {
     width: 150px;
     border-radius: 5px;
 }
 
-
-
-
-.discover-more {
+@keyframes book1-effect {
+    0% {
+        top: -61vh;
+    }
     
+}
+
+@keyframes book2-effect {
+    0% {
+        left: 50vw;
+        transform: rotateZ(360deg);
+    }
+    100% {
+        left: 12vw;
+    }
+    
+}
+
+@keyframes book3-effect {
+    0%{
+        left: -71vw;
+    }
+    100% {
+        left: 1vw;
+    }
+    
+}
+.discover-more {
     width: 300px;
-    height: 50px;
+    height: 100%;
     text-align: center;
     position: relative;
-    inset: 350px 0 0 150px;
-    
+    inset: 320px 0 0 150px;
 }
 
 .discover-more button {
-    width: 100%;
-    height: 100%;
+    margin: 10px 0;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
     border-radius: 20px;
+    border: 4px solid #7a6241;
+    background-color: #7a6241;
+    color: white;
+    transition: .4s all;
+    cursor: pointer;
+}
+
+.library-btn button{
+    width: 100%;
+}
+
+.register-btn button{
+    width: 80%;
+}
+
+.discover-more button:hover {
+    background-color: white;
+    border: 3px solid #7a6241;
+    color: black;
+}
+/* 
+///////////////////////////
+    Style for Library.php 
+/////////////////////////// 
+*/
+
+.library-page-container {
+    display: flex;
+}
+
+.library-container {
+    width: 80vw;
+    border: 1px solid black;
+    height: 100vh;
+    position: relative;
+}
+
+.book-ranking{
+    width: 20vw;
+    height: 100vh;
+    border: 1px solid black;
+}
+
+
+
+/* 
+/////////////////////////////
+Style for Registration.php 
+/////////////////////////////
+*/
+.registrationPHP-container {
+    display: flex;
+    border: 3px solid black;
+    width: 70vw;
+    height: 75vh;
+    margin: 30px auto 0;
+    animation: registration-effect 1s;
+}
+
+
+
+
+/* 
+///////////////////
+    Section Label 
+    #98745C;
+//////////////////*/
+
+.section-label {
+    position: absolute;
+    text-align: center;
+    width: 29.4vw;
+    height: 74.1vh;
+    z-index: 0;
+    left: 55.4vw; 
+    background-color: #B19A7A;
+    animation: content-effect 1s;
+    font-family: 'Alkatra', cursive;
+}
+
+@keyframes content-effect {
+    0% {
+        left: 40.4vw;
+    }
+    
+    100%{
+         left: 55.4vw; 
+
+    }
+    
+}
+
+.section-label h1, h3{
+    position: relative;
+    transform: translateY(130px);
+    color: white;
+}
+
+.section-label h1 {
+    font-size: 22px;
+    margin: 0 auto 20px;
+    width: 90%;
+}
+.section-label h3 {
+    font-size: 15px;
+}
+
+
+.section-label button {
+    font-weight: bold;
+    font-size: 15px;
+    transform: translateY(200px);
+    width: 200px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 25px;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* 
+///////////////////////
+    Section Label End
+//////////////////////
+*/
+
+
+/* 
+/////////////////////////////
+    Registration Form 
+////////////////////////////
+*/
+.registrationPHP-container form{
+    width: 40vw;
+    height: 100%;
+    text-align: center;
+    padding: 50px;
+    font-family: 'Alkatra', cursive;
+    background-color: white;
+    z-index: 2;
+}
+
+form h1 {
+    transform: translateY(-30px);
+}
+.input-data input[type="text"]{
+    padding: 5px 0 0 20px;
+    height: 40px;
+    margin: 15px 0 0;
+    width: 23vw;
+    border-radius: 15px;
+    border: 2px solid #7a6241;
+    outline: none;
+    font-size: 15px;
+
+}
+
+.input-data label {
+    position: absolute;
+    padding: 0 5px;
+    left: 25vw;
+    transform: translateY(25px);
+    animation: label-effect 1s;
+    transition: .3s all;
+}
+
+.input-data input:focus ~ label {
+    transform: translateY(7px);
+    font-size: 12px;
+    background-color: white;
+}
+
+.submit {
+    margin: 5vh 0 0;
+    width: 14vw;
+    height: 35px;
     border: none;
-    background-color: black;
+    border-radius: 25px;
+    background-color: #AA8958;
     color: white;
     cursor: pointer;
 }
+
+@keyframes registration-effect {
+    
+    0% {
+        width: 40vw;
+    }
+
+    100% {
+        width: 70vw;
+    }
+
+}
+
+@keyframes label-effect {
+   0% {
+        left: 40vw;
+   }
+    100% {
+        left: 25vw;
+    }
+}
+
+/* 
+/////////////////////
+Registration Form End
+////////////////////
+ */
+
